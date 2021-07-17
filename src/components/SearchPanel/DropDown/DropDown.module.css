@@ -1,0 +1,16 @@
+.dropDownPanel {
+    width: 600px;
+    min-height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 1px solid grey;
+    position: absolute;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    padding: 0;
+    z-index: 1;
+}
+
+.notFound {
+    text-align: center;
+    margin: 10px;
+}

@@ -1,0 +1,17 @@
+.wrapper {
+    width: 210px;
+    min-height: 260px;
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+}
+
+.wrapper:hover {
+    background: rgba(108, 108, 108, 0.2);
+    border-radius: 10px;
+}
+
+.wrapper:active {
+    background: rgba(108, 108, 108, 0.4);
+    border-radius: 10px;
+}
