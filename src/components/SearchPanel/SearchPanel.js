@@ -3,10 +3,10 @@ import { useHistory, useLocation } from "react-router-dom";
 import queryString from "query-string";
 
 import styles from "./SearchPanel.module.css";
-import { getMoviesBySearchValue } from "../../services";
+import { getMoviesBySearchValue, getMovies } from "../../services";
 import { DropDown } from "./DropDown";
 
-export const SearchPanel = ({match}) => {
+export const SearchPanel = () => {
   const location = useLocation();
   const history = useHistory();
 
@@ -21,7 +21,7 @@ export const SearchPanel = ({match}) => {
       try {
         setLoading(true);
         setSearchItems([]);
-        const { results } = await getMoviesBySearchValue({ query: value }) || {};
+        const { results } = await getMovies({ query: value }) || {};
         setSearchItems(results);
       } catch (e) {
         console.error(e);
@@ -31,11 +31,12 @@ export const SearchPanel = ({match}) => {
     }
   };
 
-  const getMovies = async (e) => {
+  const getMoviesFromDB = async (e) => {
     e.preventDefault();
 
     const query = queryString.parse(location.search);
     query.find = searchValue;
+    query.page = 1;
 
     if(!searchValue) {
       delete query.find;
@@ -47,7 +48,7 @@ export const SearchPanel = ({match}) => {
 
   return (
       <div>
-        <form onSubmit={getMovies}>
+        <form onSubmit={getMoviesFromDB}>
           <input onInput={typeSearchValue}
                  value={searchValue}
                  className={styles.searchInput}/>

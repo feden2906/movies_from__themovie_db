@@ -25,7 +25,7 @@ export const MoviesPage = () => {
         if (parsed.find) {
           movies = await getMoviesBySearchValue({ query: parsed.find }) || {};
         } else {
-          movies = await getMovies();
+          movies = await getMovies(parsed);
         }
         dispatch({ type: SET_MOVIES_DATA, payload: movies });
 

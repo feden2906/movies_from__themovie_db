@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import styles from "./MovieInfo.module.css";
 import { Loading } from "../Loading";
 import { getMovieDetailsById } from "../../services";
+import { Pagination } from "../Pagination";
 
 export const MovieInfo = () => {
   const { id } = useParams();

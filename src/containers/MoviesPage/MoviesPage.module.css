@@ -1,5 +1,6 @@
 .movies_page {
     width: 100%;
+    padding-top: 20px;
     min-height: 80vh;
     background-color: #aeb6e3;
 }

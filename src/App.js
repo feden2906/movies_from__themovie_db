@@ -10,7 +10,7 @@ function App() {
         <Header/>
 
         <Switch>
-          <Redirect exact from="/" to="/movies"/>
+          <Redirect exact from="/" to="/movies?page=1"/>
           <Route path="/movies" component={MoviesPage}/>
         </Switch>
 
