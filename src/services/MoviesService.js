@@ -6,7 +6,7 @@ const getMovies = async (params) => {
 }
 
 const getMoviesBySearchValue = async (params) => {
-  const { data } = await AXIOS.get('/search/movie', { params }) || {};
+  const { data } = await AXIOS.get(`/search/movie${params}`) || {};
   return data;
 }
 

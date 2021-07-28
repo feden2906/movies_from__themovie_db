@@ -14,7 +14,7 @@ export const MoviesList = () => {
 
   return (
       <div className={styles.wrapper}>
-        <Pagination/>
+        {!!movies.length && <Pagination/>}
         <div className={styles.wrapperList}>
           {
             movies.length

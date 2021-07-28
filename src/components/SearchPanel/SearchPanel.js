@@ -3,7 +3,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import queryString from "query-string";
 
 import styles from "./SearchPanel.module.css";
-import { getMoviesBySearchValue, getMovies } from "../../services";
+import { getMoviesBySearchValue } from "../../services";
 import { DropDown } from "./DropDown";
 
 export const SearchPanel = () => {
@@ -21,7 +21,7 @@ export const SearchPanel = () => {
       try {
         setLoading(true);
         setSearchItems([]);
-        const { results } = await getMovies({ query: value }) || {};
+        const { results } = await getMoviesBySearchValue(`?query=${value}`) || {};
         setSearchItems(results);
       } catch (e) {
         console.error(e);
@@ -35,11 +35,11 @@ export const SearchPanel = () => {
     e.preventDefault();
 
     const query = queryString.parse(location.search);
-    query.find = searchValue;
-    query.page = 1;
+    query.query = searchValue;
+    query.page = '1';
 
     if(!searchValue) {
-      delete query.find;
+      delete query.query;
     }
 
     history.push('/movies?' + queryString.stringify(query));

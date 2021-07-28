@@ -20,13 +20,12 @@ export const MoviesPage = () => {
         dispatch({ type: SET_LOADING, payload: true });
 
         const parsed = queryString.parse(search);
-        let movies = [];
+        let movies;
 
-        if (parsed.find) {
-          movies = await getMoviesBySearchValue({ query: parsed.find }) || {};
-        } else {
-          movies = await getMovies(parsed);
-        }
+        parsed.query
+          ? movies = await getMoviesBySearchValue(search) || {}
+          : movies = await getMovies(parsed);
+
         dispatch({ type: SET_MOVIES_DATA, payload: movies });
 
         if (!genres) {
