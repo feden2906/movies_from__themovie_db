@@ -1,7 +1,7 @@
 .header {
     width: 100%;
     height: 10vh;
-    background-color: #7f8ace;
+
     padding: 20px 60px;
     display: flex;
     justify-content: space-between;
@@ -13,4 +13,11 @@
     text-decoration:none;
     font-size: 34px;
     color: #000000;
+}
+
+.white {
+    background-color: #7f8ace;
+}
+.dark {
+    background-color: #061240;
 }
