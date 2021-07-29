@@ -9,4 +9,5 @@ export * from './MoviesListCard';
 export * from './PosterPreview';
 export * from './SearchPanel';
 export * from './StarsRating';
+export * from './ToggleThem';
 export * from './UserInfo';
