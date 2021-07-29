@@ -12,7 +12,7 @@ export const MoviesListCard = ({ item }) => {
   if (overview.length > 200) {
     overview = `${overview.slice(0, 200)} ...`;
   }
-  // <Link to={`/movies/${item.id}`} className={styles.link}
+
   return (
       <Link to={`/movies/${item.id}`} className={styles.wrapper}>
         <div
