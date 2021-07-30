@@ -1,5 +1,5 @@
 .input {
-    width: 200px;
+    width: 180px;
     font-size: 17px;
     padding: 5px 10px;
     border-radius: 10px;
@@ -9,4 +9,12 @@
 .input:active {
     border: 1px solid black;
     border-radius: 10px;
+}
+
+.white {
+    background-color: #ccced7;
+}
+.dark {
+    background-color: #373752;
+    color: #81c1f3;
 }

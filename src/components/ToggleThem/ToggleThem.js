@@ -5,11 +5,11 @@ import { setTheme } from "../../redux/action-creators/theme";
 
 export const ToggleThem = () => {
 
-  const [state, setState] = useState(true);
+  const [state, setState] = useState(false);
 const dispatch = useDispatch();
 
   useEffect(() => {
-    const theme = JSON.parse(localStorage.getItem('theme') || 'true');
+    const theme = JSON.parse(localStorage.getItem('theme') || 'false');
     setState(theme);
     dispatch(setTheme(theme));
   }, [dispatch]);
@@ -27,7 +27,8 @@ const dispatch = useDispatch();
                 checked={state}
                 onChange={changeTheme}
                 name="toggle"
-                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                color="secondary"
+                // inputProps={{ 'aria-label': 'secondary checkbox' }}
             />
         </div>
     );

@@ -1,8 +1,10 @@
 import styles from './DropDown.module.css';
 import { DropDownItem } from "../DropDownItem";
 import { Loading } from "../../Loading";
+import { useSelector } from "react-redux";
 
 export const DropDown = ({ searchItems, loading, ...rest }) => {
+  const { theme } = useSelector(({theme}) => theme);
 
   if (!searchItems.length && loading) {
     return (
@@ -13,7 +15,7 @@ export const DropDown = ({ searchItems, loading, ...rest }) => {
   }
 
   return (
-      <div className={styles.dropDownPanel}>
+      <div className={`${styles.dropDownPanel} ${theme ? styles.dark : styles.white}`}>
         {
           !searchItems.length && loading && <Loading/>
         }

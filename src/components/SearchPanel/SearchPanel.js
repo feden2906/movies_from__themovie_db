@@ -5,10 +5,12 @@ import queryString from "query-string";
 import styles from "./SearchPanel.module.css";
 import { getMoviesBySearchValue } from "../../services";
 import { DropDown } from "./DropDown";
+import { useSelector } from "react-redux";
 
 export const SearchPanel = () => {
   const location = useLocation();
   const history = useHistory();
+  const { theme } = useSelector(({theme}) => theme);
 
   const [searchValue, setSearchValue] = useState('');
   const [searchItems, setSearchItems] = useState([]);
@@ -51,7 +53,7 @@ export const SearchPanel = () => {
         <form onSubmit={getMoviesFromDB}>
           <input onInput={typeSearchValue}
                  value={searchValue}
-                 className={styles.searchInput}/>
+                 className={`${styles.searchInput} ${theme ? styles.dark : styles.white}`}/>
         </form>
 
         {

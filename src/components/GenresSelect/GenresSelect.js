@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 export const GenresSelect = () => {
   const location = useLocation();
   const history = useHistory();
+  const { theme } = useSelector(({theme}) => theme);
 
   const { genres } = useSelector(({ genres }) => genres);
 
@@ -18,7 +19,7 @@ export const GenresSelect = () => {
   };
 
   return (
-      <select className={styles.input} onChange={chooseGenre}>
+      <select className={`${styles.input} ${theme ? styles.dark : styles.white}`} onChange={chooseGenre}>
         <option>Show all genres</option>
         {
           genres && genres.map(value => <option key={value.id} selected={value.id === '99'} value={value.id}>{value.name}</option>)

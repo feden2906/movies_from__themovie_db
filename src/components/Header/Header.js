@@ -8,10 +8,10 @@ import { useSelector } from "react-redux";
 
 export const Header = () => {
   const { theme } = useSelector(({theme}) => theme);
-  console.log(theme)
+
   return (
-      <div className={`${styles.header} ${theme ? styles.white : styles.dark}`}>
-        <Link to="/" className={styles.logo}><b><i>MoviesDB</i></b></Link>
+      <div className={`${styles.header} ${theme ? styles.dark : styles.white}`}>
+        <Link to="/" className={`${styles.logo} ${theme && styles.dark}`}><b><i>MoviesDB</i></b></Link>
         <SearchPanel/>
         <GenresSelect/>
         <ToggleThem/>

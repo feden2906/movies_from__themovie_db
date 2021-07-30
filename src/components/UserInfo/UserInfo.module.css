@@ -7,5 +7,9 @@
 }
 
 .wrapper > img {
-    width: 50px;
+    width: 40px;
+}
+
+.dark {
+    color: #81c1f3;
 }
