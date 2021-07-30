@@ -15,3 +15,11 @@
     background: rgba(108, 108, 108, 0.4);
     border-radius: 10px;
 }
+
+.dark {
+    color: #81c1f3;
+}
+
+.darkSpan {
+    color: #cdcdcd;
+}

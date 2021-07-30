@@ -1,5 +1,12 @@
 .footer {
     width: 100%;
     height: 10vh;
+}
+
+.white {
     background-color: #7f8ace;
+}
+.dark {
+    background-color: #050521;
+    color: #81c1f3;
 }

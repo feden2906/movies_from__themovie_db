@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import styles from './UserInfo.module.css';
 
@@ -6,8 +7,8 @@ export const UserInfo = () => {
   const { theme } = useSelector(({ theme }) => theme);
 
   return (
-      <div className={`${styles.wrapper} ${theme && styles.dark}`}>
-        <b><i>Person Personovich</i></b>
+      <div className={styles.wrapper}>
+        <Link className={theme ? styles.dark : styles.white} to="#"><b><i>Person Personovich</i></b></Link>
         {
           theme
               ? <img src="./user1.png" alt="icon"/>
