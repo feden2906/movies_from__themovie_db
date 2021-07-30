@@ -1,4 +1,4 @@
-import { CHANGE_THEME } from "../action-types/theme";
+import { CHANGE_THEME } from "../action-types";
 
 const initialState = { theme: null }
 

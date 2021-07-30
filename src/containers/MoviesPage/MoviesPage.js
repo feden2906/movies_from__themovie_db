@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 
 import styles from "./MoviesPage.module.css";
 import { MovieInfo, MoviesList } from "../../components";
-import { SET_GENRES, SET_LOADING, SET_MOVIES_DATA } from "../../redux/action-types";
+import { setGenres, setLoading, setMovies } from "../../redux";
 import { getGenres, getMovies, getMoviesBySearchValue } from "../../services";
 
 export const MoviesPage = () => {
@@ -17,7 +17,7 @@ export const MoviesPage = () => {
   useEffect(() => {
     (async function() {
       try {
-        dispatch({ type: SET_LOADING, payload: true });
+        dispatch(setLoading(true));
 
         const parsed = queryString.parse(search);
         let movies;
@@ -26,28 +26,25 @@ export const MoviesPage = () => {
             ? movies = await getMoviesBySearchValue(search) || {}
             : movies = await getMovies(parsed);
 
-        dispatch({ type: SET_MOVIES_DATA, payload: movies });
+        dispatch(setMovies(movies));
 
         if (!genres) {
           const genres = await getGenres();
-          dispatch({ type: SET_GENRES, payload: genres })
+          dispatch(setGenres(genres))
         }
       } catch (e) {
         console.error(e);
       } finally {
-        dispatch({ type: SET_LOADING, payload: false })
+        dispatch(setLoading(false));
       }
     })();
   }, [dispatch, genres, search]);
 
   return (
-      <div className={`${styles.movies_page}  ${theme ? styles.dark : styles.white}`}>
+      <div className={`${styles.movies_page} ${theme ? styles.dark : styles.white}`}>
         <Switch>
-          <Route exact
-                 path="/movies/:id"
-                 component={MovieInfo}/>
-          <Route path="/movies"
-                 component={MoviesList}/>
+          <Route exact path="/movies/:id" component={MovieInfo}/>
+          <Route path="/movies" component={MoviesList}/>
         </Switch>
       </div>
   );
