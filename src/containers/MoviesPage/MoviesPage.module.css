@@ -4,3 +4,12 @@
     min-height: 80vh;
     background-color: #aeb6e3;
 }
+
+
+.white {
+    background-color: #ccced7;
+}
+.dark {
+    background-color: #373752;
+    color: #81c1f3;
+}

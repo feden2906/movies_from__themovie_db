@@ -10,9 +10,9 @@ import { getGenres, getMovies, getMoviesBySearchValue } from "../../services";
 
 export const MoviesPage = () => {
   const dispatch = useDispatch();
-  const {search} = useLocation();
+  const { search } = useLocation();
 
-  const { genres } = useSelector(({ genres }) => genres);
+  const { genres, theme } = useSelector(({ genres: { genres }, theme: { theme } }) => ({ genres, theme }));
 
   useEffect(() => {
     (async function() {
@@ -23,8 +23,8 @@ export const MoviesPage = () => {
         let movies;
 
         parsed.query
-          ? movies = await getMoviesBySearchValue(search) || {}
-          : movies = await getMovies(parsed);
+            ? movies = await getMoviesBySearchValue(search) || {}
+            : movies = await getMovies(parsed);
 
         dispatch({ type: SET_MOVIES_DATA, payload: movies });
 
@@ -41,10 +41,13 @@ export const MoviesPage = () => {
   }, [dispatch, genres, search]);
 
   return (
-      <div className={styles.movies_page}>
+      <div className={`${styles.movies_page}  ${theme ? styles.dark : styles.white}`}>
         <Switch>
-          <Route exact path="/movies/:id" component={MovieInfo}/>
-          <Route path="/movies" component={MoviesList}/>
+          <Route exact
+                 path="/movies/:id"
+                 component={MovieInfo}/>
+          <Route path="/movies"
+                 component={MoviesList}/>
         </Switch>
       </div>
   );

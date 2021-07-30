@@ -5,19 +5,20 @@
     border-radius: 10px;
     border: 1px solid grey;
     position: absolute;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
-    padding: 0;
-    z-index: 1;
+    margin-top: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+
 }
 
 .notFound {
     text-align: center;
     margin: 10px;
+
 }
 
 
 .white {
-    background-color: #ccced7;
+    background-color: rgba(204, 206, 215, 0.8);
 }
 .dark {
     background-color: rgba(0, 0, 0, 0.8);

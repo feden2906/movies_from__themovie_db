@@ -1,7 +1,7 @@
 import Switch from '@material-ui/core/Switch';
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setTheme } from "../../redux/action-creators/theme";
+import { setTheme } from "../../redux";
 
 export const ToggleThem = () => {
 
@@ -28,7 +28,6 @@ const dispatch = useDispatch();
                 onChange={changeTheme}
                 name="toggle"
                 color="secondary"
-                // inputProps={{ 'aria-label': 'secondary checkbox' }}
             />
         </div>
     );

@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 import styles from "./MovieInfo.module.css";
 import { Loading } from "../Loading";
 import { getMovieDetailsById } from "../../services";
+import { useSelector } from "react-redux";
 
 export const MovieInfo = () => {
   const { id } = useParams();
+  const { theme } = useSelector(({theme}) => theme);
 
   const [filmDetails, setFilmDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
@@ -39,12 +41,12 @@ export const MovieInfo = () => {
           <img src={imgBuilder(filmDetails.poster_path)} alt={`${filmDetails.poster_path} poster`}/>
 
           <div className={styles.wrapperVote}>
-            <div className={styles.vote}>
+            <div className={`${styles.vote} ${theme ? styles.dark : styles.white}`}>
               <p className={styles.voteTitle}>MovieDB:</p>
               <hr/>
               <p className={styles.voteCount}>{filmDetails.vote_average}</p>
             </div>
-            <div className={styles.vote}>
+            <div className={`${styles.vote} ${theme ? styles.dark : styles.white}`}>
               <p className={styles.voteTitle}>Проголосувало:</p>
               <hr/>
               <p className={styles.voteCount}>{filmDetails.vote_count}</p>

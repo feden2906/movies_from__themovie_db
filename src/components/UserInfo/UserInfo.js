@@ -1,5 +1,6 @@
-import styles from './UserInfo.module.css';
 import { useSelector } from "react-redux";
+
+import styles from './UserInfo.module.css';
 
 export const UserInfo = () => {
   const { theme } = useSelector(({ theme }) => theme);

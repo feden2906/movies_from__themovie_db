@@ -8,7 +8,7 @@ export const DropDown = ({ searchItems, loading, ...rest }) => {
 
   if (!searchItems.length && loading) {
     return (
-        <div className={styles.dropDownPanel}>
+        <div className={`${styles.dropDownPanel} ${theme ? styles.dark : styles.white}`}>
           <Loading/>
         </div>
     )
