@@ -13,6 +13,7 @@ export const SearchPanel = () => {
   const { theme } = useSelector(({theme}) => theme);
 
   const [searchValue, setSearchValue] = useState('');
+  const [dropDownIsVisible, setDropDownIsVisible] = useState(true);
   const [searchItems, setSearchItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -40,24 +41,23 @@ export const SearchPanel = () => {
     query.query = searchValue;
     query.page = '1';
 
-    if(!searchValue) {
-      delete query.query;
-    }
+    if(!searchValue) delete query.query;
 
     history.push('/movies?' + queryString.stringify(query));
     setSearchValue('');
   };
 
   return (
-      <div>
+      <div onMouseLeave={() => setDropDownIsVisible(false)}>
         <form onSubmit={getMoviesFromDB}>
           <input onInput={typeSearchValue}
+                 onClick={() => setDropDownIsVisible(true)}
                  value={searchValue}
                  className={`${styles.searchInput} ${theme ? styles.dark : styles.white}`}/>
         </form>
 
         {
-          searchValue && <DropDown searchItems={searchItems} loading={loading} setSearchValue={setSearchValue}/> // TODO вимикати коли інпут неактивний
+          dropDownIsVisible && searchValue && <DropDown searchItems={searchItems} loading={loading} setSearchValue={setSearchValue}/>
         }
       </div>
   );
