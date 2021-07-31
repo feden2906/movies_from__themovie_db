@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "./MovieInfo.module.css";
 import { Loading } from "../Loading";
 import { getMovieDetailsById } from "../../services";
-import { useSelector } from "react-redux";
 
 export const MovieInfo = () => {
   const { id } = useParams();

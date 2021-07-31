@@ -15,6 +15,6 @@ const getMovieDetailsById = async (movieId) => {
   return data;
 }
 
-export { getMovies, getMoviesBySearchValue, getMovieDetailsById }
+export { getMovies, getMoviesBySearchValue, getMovieDetailsById };
 
 

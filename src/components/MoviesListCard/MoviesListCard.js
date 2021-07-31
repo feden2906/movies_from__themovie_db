@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from './MoviesListCard.module.css';
 import { GenreBadge } from "../GenreBadge";
-import { useSelector } from "react-redux";
 
 const imgBuilder = (posterPath, size = 200) => `https://image.tmdb.org/t/p/w${size}${posterPath}`;
 

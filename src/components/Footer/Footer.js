@@ -1,5 +1,6 @@
-import styles from './Footer.module.css';
 import { useSelector } from "react-redux";
+
+import styles from './Footer.module.css';
 
 export const Footer = () => {
   const { theme } = useSelector(({theme}) => theme);

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import queryString from "query-string";
 
 import styles from "./SearchPanel.module.css";
-import { getMoviesBySearchValue } from "../../services";
 import { DropDown } from "./DropDown";
-import { useSelector } from "react-redux";
+import { getMoviesBySearchValue } from "../../services";
 
 export const SearchPanel = () => {
   const location = useLocation();

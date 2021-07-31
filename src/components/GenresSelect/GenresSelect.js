@@ -1,8 +1,8 @@
 import { useHistory, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import queryString from "query-string";
 
 import styles from "./GenresSelect.module.css";
-import { useSelector } from "react-redux";
 
 export const GenresSelect = () => {
   const location = useLocation();

@@ -1,7 +1,8 @@
+import { useSelector } from "react-redux";
+
 import styles from './DropDown.module.css';
 import { DropDownItem } from "../DropDownItem";
 import { Loading } from "../../Loading";
-import { useSelector } from "react-redux";
 
 export const DropDown = ({ searchItems, loading, ...rest }) => {
   const { theme } = useSelector(({theme}) => theme);

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from './DropDownItem.module.css';
 import { useSelector } from "react-redux";
+
+import styles from './DropDownItem.module.css';
 
 export const DropDownItem = ({ item, setSearchValue }) => {
   const { theme } = useSelector(({theme}) => theme);
