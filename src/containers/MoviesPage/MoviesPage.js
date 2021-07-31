@@ -30,7 +30,7 @@ export const MoviesPage = () => {
 
         if (!genres) {
           const genres = await getGenres();
-          dispatch(setGenres(genres))
+          dispatch(setGenres(genres));
         }
       } catch (e) {
         console.error(e);
