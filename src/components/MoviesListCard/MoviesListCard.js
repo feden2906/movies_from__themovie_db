@@ -35,9 +35,9 @@ export const MoviesListCard = ({ item }) => {
 
           <GenreBadge genre_ids={genre_ids}/>
 
-          <span><b className={theme && styles.darkSpan}>Rating:</b> {vote_average} (total votes: {vote_count})</span>
+          <span><b className={theme ? styles.darkSpan : ''}>Rating:</b> {vote_average} (total votes: {vote_count})</span>
           <p className={styles.overview}>{overview}</p>
-          <span><b className={theme && styles.darkSpan}>Release date:</b> {release_date}</span>
+          <span><b className={theme ? styles.darkSpan : ''}>Release date:</b> {release_date}</span>
         </div>
       </Link>
   );

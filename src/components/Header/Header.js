@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
       <div className={`${styles.header} ${theme ? styles.dark : styles.white}`}>
-        <Link to="/" className={`${styles.logo} ${theme && styles.dark}`}><b><i>MoviesDB</i></b></Link>
+        <Link to="/" className={`${styles.logo} ${theme ? styles.dark : ''}`}><b><i>MoviesDB</i></b></Link>
         <SearchPanel/>
         <GenresSelect/>
         <ToggleThem/>

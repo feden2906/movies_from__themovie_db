@@ -6,7 +6,6 @@ export * from './Loading';
 export * from './MovieInfo';
 export * from './MoviesList';
 export * from './MoviesListCard';
-export * from './PosterPreview';
 export * from './SearchPanel';
 export * from './StarsRating';
 export * from './ToggleThem';

@@ -8,7 +8,7 @@ export const DropDownItem = ({ item, setSearchValue }) => {
 
   return (
       <Link to={`/movies/${item.id}`} className={styles.link} onClick={() => setSearchValue('')}>
-        <div className={`${styles.searchItem} ${theme && styles.dark}`}>{item.title}</div>
+        <div className={`${styles.searchItem} ${theme ? styles.dark : ""}`}>{item.title}</div>
       </Link>
   );
 }
