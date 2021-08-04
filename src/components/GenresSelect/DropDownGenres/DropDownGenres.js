@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import Checkbox from '@material-ui/core/Checkbox';
+import { withStyles } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
 import queryString from "query-string";
 
 import styles from './DropDownGenres.module.css';
@@ -32,17 +34,25 @@ export const DropDownGenres = ({ genres, chosenGenres }) => {    // TODO control
     history.push('/movies?' + queryString.stringify(query));
   }
 
+  const Checkbox2 = withStyles({
+    root: {
+      color: theme ? blue[400] : '',
+      '&$checked': {
+        color: theme ? blue[600] : '',
+      },
+    },
+    checked: {},
+  })((props) => <Checkbox color="default" {...props} />);
+
   return (
       <form className={`${styles.dropDownPanel} ${theme ? styles.dark : styles.white}`}>
         {
           genres.map(item => {
             return (
                 <div key={item.id}>
-                  <Checkbox
+                  <Checkbox2
                       onChange={() => onChange(item.id.toString())}
                       checked={chosenGenres?.includes(item.id.toString())}
-                      color="primary"
-                      inputProps={{ 'aria-label': 'secondary checkbox' }}
                   />
                   {item.name}
                 </div>
