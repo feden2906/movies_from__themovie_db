@@ -1,12 +1,13 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import './App.css';
-import { Footer, Header } from "./components";
+import {Footer, Header, Hide} from "./components";
 import { MoviesPage } from "./containers";
 
 function App() {
   return (
       <div>
+        <Hide/>
         <Header/>
 
         <Switch>

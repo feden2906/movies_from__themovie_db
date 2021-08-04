@@ -2,6 +2,7 @@ export * from './Footer';
 export * from './GenreBadge';
 export * from './GenresSelect';
 export * from './Header';
+export * from './Hide';
 export * from './Loading';
 export * from './MovieInfo';
 export * from './MoviesList';
