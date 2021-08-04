@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import Checkbox from '@material-ui/core/Checkbox';
@@ -7,30 +8,38 @@ import queryString from "query-string";
 
 import styles from './DropDownGenres.module.css';
 
-export const DropDownGenres = ({ genres, chosenGenres }) => {    // TODO controlled form
+export const DropDownGenres = ({ genres, chosenGenres }) => {
   const location = useLocation();
   const history = useHistory();
-
   const { theme } = useSelector(({ theme }) => theme);
+  const [generes, setGeneres] = useState(genres);
 
-  const onChange = (id) => {
+  useEffect(() => {
+    const arr = []
+    genres.map(value => chosenGenres?.includes(value.id.toString()) ? arr[value.id] = true : arr[value.id] = false);
+    setGeneres(arr);
+  }, [chosenGenres, genres]);
+
+  const onChange = ({ target }) => {
+    const { checked, name } = target;
+    setGeneres([
+      ...generes,
+      generes[+name] = checked
+    ]);
+
     const query = queryString.parse(location.search);
 
     if (query.with_genres) {
-      let arr = query.with_genres.split(',');
+      chosenGenres.includes(name)
+        ? chosenGenres = chosenGenres.filter(value => value !== name)
+        : chosenGenres.push(name);
 
-      if (arr.includes(id)) {
-        arr = arr.filter(value => value !== id);
-      } else {
-        arr.push(id);
-      }
-
-      query.with_genres = arr.join(',');
+      query.with_genres = chosenGenres.join(',');
     } else {
-      query.with_genres = id;
+      query.with_genres = name;
     }
 
-    if (!query.with_genres.length) delete query.with_genres;
+    if (!query.with_genres?.length) delete query.with_genres;
     history.push('/movies?' + queryString.stringify(query));
   }
 
@@ -51,7 +60,8 @@ export const DropDownGenres = ({ genres, chosenGenres }) => {    // TODO control
             return (
                 <div key={item.id}>
                   <Checkbox2
-                      onChange={() => onChange(item.id.toString())}
+                      name={item.id.toString()}
+                      onChange={onChange}
                       checked={chosenGenres?.includes(item.id.toString())}
                   />
                   {item.name}
