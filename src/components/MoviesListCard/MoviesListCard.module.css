@@ -23,3 +23,23 @@
 .darkSpan {
     color: #cdcdcd;
 }
+
+.image {
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.image img {
+    transition: 1s;
+    display: block;
+}
+
+.image img:hover {
+    transform: scale(1.1);
+}
