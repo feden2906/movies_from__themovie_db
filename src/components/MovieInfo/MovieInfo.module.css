@@ -3,15 +3,24 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 30px 0;
 }
 
+iframe {
+    width: 885px;
+    height: 500px;
+    border: 1px solid black;
+    margin: 40px 50px 0;
+}
 
 .wrapperVote {
     display: flex;
     justify-content: center;
     padding: 10px 10px 0;
 }
+.wrapperImg {
+    margin-top: 40px;
+}
+
 .vote {
     margin: 0 10px;
     text-align: center;

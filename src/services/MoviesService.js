@@ -11,7 +11,7 @@ const getMoviesBySearchValue = async (params) => {
 }
 
 const getMovieDetailsById = async (movieId) => {
-  const { data } = await AXIOS.get(`/movie/${movieId}`) || {};
+  const { data } = await AXIOS.get(`/movie/${movieId}?append_to_response=videos`) || {};
   return data;
 }
 

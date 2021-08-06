@@ -21,8 +21,8 @@ export const MoviesListCard = ({ item }) => {
         <div className={styles.image}>
           <img src={imgBuilder(poster_path)} alt="" className="scale"/>
         </div>
-        <div className={theme && styles.dark}>
-          <h3 className={theme && styles.darkSpan}>{original_title}</h3>
+        <div className={theme ? styles.dark : ''}>
+          <h3 className={theme ? styles.darkSpan : ''}>{original_title}</h3>
 
           <GenreBadge genre_ids={genre_ids}/>
 

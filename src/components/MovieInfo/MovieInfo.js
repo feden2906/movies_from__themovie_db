@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./MovieInfo.module.css";
-import { Loading } from "../Loading";
 import { getMovieDetailsById } from "../../services";
+import { Loading } from "../Loading";
 
 export const MovieInfo = () => {
   const { id } = useParams();
-  const { theme } = useSelector(({theme}) => theme);
+  const { theme } = useSelector(({ theme }) => theme);
 
   const [filmDetails, setFilmDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
@@ -38,7 +38,8 @@ export const MovieInfo = () => {
       <div className={styles.wrapper}>
 
         <div className={styles.wrapperImg}>
-          <img src={imgBuilder(filmDetails.poster_path)} alt={`${filmDetails.poster_path} poster`}/>
+          <img src={imgBuilder(filmDetails.poster_path)}
+               alt={`${filmDetails.poster_path} poster`}/>
 
           <div className={styles.wrapperVote}>
             <div className={`${styles.vote} ${theme ? styles.dark : styles.white}`}>
@@ -52,8 +53,8 @@ export const MovieInfo = () => {
               <p className={styles.voteCount}>{filmDetails.vote_count}</p>
             </div>
           </div>
-
         </div>
+
         <div className={styles.wrapperInfo}>
           <h1 className={styles.filmTitle}>{filmDetails.original_title}</h1>
           <p>
@@ -70,8 +71,10 @@ export const MovieInfo = () => {
           </p>
           <b>Опис :</b>
           <p>{filmDetails.overview}</p>
-        </div>
 
+          <iframe title={'video'}
+                  src={'https://www.youtube.com/embed/' + filmDetails.videos?.results[0]?.key}/>
+        </div>
       </div>
   )
 }

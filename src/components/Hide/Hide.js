@@ -8,7 +8,7 @@ export const Hide = () => {
     setHide(false);
     localStorage.setItem('modalState', JSON.stringify(false));
   }
-  console.log(hide)
+
   useEffect(() => {
     const resp = JSON.parse(localStorage.getItem('modalState'));
     if (resp === null) setHide(true);
