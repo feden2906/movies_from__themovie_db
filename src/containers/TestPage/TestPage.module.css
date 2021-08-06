@@ -1,4 +1,10 @@
 .wrapper {
-    background-color: #e5aaaa;
     min-height: 100vh;
+}
+
+.green {
+    background-color: rgba(124, 163, 122, 0.71);
+}
+.red {
+    background-color: #e5aaaa;
 }

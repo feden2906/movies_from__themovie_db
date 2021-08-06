@@ -7,14 +7,14 @@ export const Timer = ({ setStart, success }) => {
 
   if (!success) {
     (() => {
-      seconds > 0 && setTimeout(() => setSeconds(seconds - 1), 100);
-      seconds === 0 && setTimeout(() => setSeconds(59), 100);
-      seconds === 0 && setTimeout(() => setMinutes(minutes - 1), 100);
+      seconds > 0 && setTimeout(() => setSeconds(seconds - 1), 1000);
+      seconds === 0 && setTimeout(() => setSeconds(59), 1000);
+      seconds === 0 && setTimeout(() => setMinutes(minutes - 1), 1000);
       minutes === 0 && seconds === 0 && setStart(false);
     })();
   }
   return (
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} ${success ? styles.green : styles.red}`}>
         {minutes} : {seconds.toString().length === 1 ? '0' + seconds : seconds}
       </div>
   );
