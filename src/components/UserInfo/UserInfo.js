@@ -8,12 +8,14 @@ export const UserInfo = () => {
 
   return (
       <div className={styles.wrapper}>
-        <Link className={theme ? styles.dark : styles.white} to="#"><b><i>Person Personovich</i></b></Link>
-        {
-          theme
-              ? <img src="./user1.png" alt="icon"/>
-              : <img src="./user2.png" alt="icon"/>
-        }
+        <Link to="/myCV" className={theme ? styles.dark : styles.white}><b><i>Person Personovich</i></b></Link>
+        <Link to="/myCV" className={styles.img}>
+          {
+            theme
+                ? <img src="./user1.png" alt="icon"/>
+                : <img src="./user2.png" alt="icon"/>
+          }
+        </Link>
       </div>
   );
 }

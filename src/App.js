@@ -7,16 +7,16 @@ import { MoviesPage } from "./containers";
 function App() {
   return (
       <div>
-        <Hide/>
-        <Header/>
+
+
 
         <Switch>
           <Redirect exact from="/" to="/movies?page=1"/>
           {/*<Redirect exact from="/movies" to="/movies?page=1"/>*/}
           <Route path="/movies" component={MoviesPage}/>
+          {/*<Route path="/myCV" component={}/>*/}
         </Switch>
 
-        <Footer/>
       </div>
   );
 }

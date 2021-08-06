@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import styles from './MoviesListCard.module.css';
 import { GenreBadge } from "../GenreBadge";
 
-const imgBuilder = (posterPath, size = 300) => `https://image.tmdb.org/t/p/w${size}${posterPath}`;
+const imgBuilder = (posterPath, size = 400) => `https://image.tmdb.org/t/p/w${size}${posterPath}`;
 
 export const MoviesListCard = ({ item }) => {
   const { theme } = useSelector(({theme}) => theme);
@@ -19,9 +19,9 @@ export const MoviesListCard = ({ item }) => {
   return (
       <Link to={`/movies/${item.id}`} className={styles.wrapper}>
         <div className={styles.image}>
-          <img src={imgBuilder(poster_path)} alt="" className="scale"/>
+          <img src={imgBuilder(poster_path)} alt="poster" className="scale"/>
         </div>
-        <div className={theme ? styles.dark : ''}>
+        <div className={`${styles.info} ${theme ? styles.dark : ''}`}>
           <h3 className={theme ? styles.darkSpan : ''}>{original_title}</h3>
 
           <GenreBadge genre_ids={genre_ids}/>

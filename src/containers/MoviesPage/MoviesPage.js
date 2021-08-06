@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 
 import styles from "./MoviesPage.module.css";
-import { MovieInfo, MoviesList } from "../../components";
+import { Footer, Header, Hide, MovieInfo, MoviesList } from "../../components";
 import { setGenres, setLoading, setMovies } from "../../redux";
 import { getGenres, getMovies, getMoviesBySearchValue } from "../../services";
 
@@ -41,11 +41,16 @@ export const MoviesPage = () => {
   }, [dispatch, genres, search]);
 
   return (
+      <>
+        <Hide/>
+        <Header/>
       <div className={`${styles.movies_page} ${theme ? styles.dark : styles.white}`}>
         <Switch>
           <Route exact path="/movies/:id" component={MovieInfo}/>
           <Route path="/movies" component={MoviesList}/>
         </Switch>
       </div>
+        <Footer/>
+      </>
   );
 }
