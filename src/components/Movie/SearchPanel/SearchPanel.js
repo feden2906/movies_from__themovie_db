@@ -5,7 +5,7 @@ import queryString from "query-string";
 
 import styles from "./SearchPanel.module.css";
 import { DropDown } from "./DropDown";
-import { getMoviesBySearchValue } from "../../services";
+import { getMoviesBySearchValue } from "../../../services";
 
 export const SearchPanel = () => {
   const location = useLocation();

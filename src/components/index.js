@@ -1,13 +1,3 @@
-export * from './Footer';
-export * from './GenreBadge';
-export * from './GenresSelect';
-export * from './Header';
-export * from './Hide';
-export * from './Loading';
-export * from './MovieInfo';
-export * from './MoviesList';
-export * from './MoviesListCard';
-export * from './SearchPanel';
-export * from './StarsRating';
-export * from './ToggleThem';
-export * from './UserInfo';
+// export * from './CV';
+export * from './Movie';
+export * from './Test';

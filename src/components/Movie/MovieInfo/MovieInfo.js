@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./MovieInfo.module.css";
-import { getMovieDetailsById } from "../../services";
+import { getMovieDetailsById } from "../../../services";
 import { Loading } from "../Loading";
 
 export const MovieInfo = () => {

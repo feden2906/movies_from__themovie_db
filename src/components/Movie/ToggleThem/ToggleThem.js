@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import styles from "./ToggleThem.module.css";
-import { setTheme } from "../../redux";
+import { setTheme } from "../../../redux";
 
 export const ToggleThem = () => {
   const [state, setState] = useState(false);

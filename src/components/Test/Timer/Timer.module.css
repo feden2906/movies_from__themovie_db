@@ -1,0 +1,11 @@
+.wrapper {
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+    background-color: #d99393;
+}

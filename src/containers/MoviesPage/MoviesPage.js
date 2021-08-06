@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 
 import styles from "./MoviesPage.module.css";
-import { Footer, Header, Hide, MovieInfo, MoviesList } from "../../components";
+import { Footer, Header, Hide, MovieInfo, MoviesList } from "../../components/Movie";
 import { setGenres, setLoading, setMovies } from "../../redux";
 import { getGenres, getMovies, getMoviesBySearchValue } from "../../services";
 

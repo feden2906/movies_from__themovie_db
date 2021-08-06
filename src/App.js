@@ -1,20 +1,18 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import './App.css';
-import {Footer, Header, Hide} from "./components";
-import { MoviesPage } from "./containers";
+import { CV, MoviesPage, TestPage } from "./containers";
 
 function App() {
   return (
       <div>
 
-
-
         <Switch>
           <Redirect exact from="/" to="/movies?page=1"/>
           {/*<Redirect exact from="/movies" to="/movies?page=1"/>*/}
           <Route path="/movies" component={MoviesPage}/>
-          {/*<Route path="/myCV" component={}/>*/}
+          <Route path="/myCV" component={CV}/>
+          <Route path="/test" component={TestPage}/>
         </Switch>
 
       </div>
