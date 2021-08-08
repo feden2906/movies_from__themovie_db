@@ -5,4 +5,5 @@ export * from './ContactCV';
 export * from './LanguagesCV';
 export * from './PetProjectsCV';
 export * from './TechnicalSkillsCV';
+export * from './WorkCV';
 export * from '.';
