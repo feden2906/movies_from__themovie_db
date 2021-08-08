@@ -6,7 +6,7 @@
 .cv_wrapper {
     margin: auto;
     width: 1000px;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     /*padding: 50px 100px;*/
     background-color: #fff;
     border-left: 1px black solid;
