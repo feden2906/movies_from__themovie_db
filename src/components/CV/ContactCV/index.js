@@ -1,1 +1,1 @@
-export * from './ContactCV.module.css';
+export * from './ContactCV';

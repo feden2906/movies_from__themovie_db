@@ -4,11 +4,11 @@ import { BlockTitle } from "../BlockTitle";
 export const ContactCV = () => {
 
   return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapperBlock}>
         <BlockTitle title={'CONTACTS'}/>
-        <div>
+        <div className={styles.wrapper}>
           <div>
-            <b>E - mail : </b>
+            <b>E-mail : </b>
             <span>feden2906@gmail.com</span>
           </div>
           <div>
