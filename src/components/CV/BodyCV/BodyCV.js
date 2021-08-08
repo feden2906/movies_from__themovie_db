@@ -1,8 +1,8 @@
 import styles from './BodyCV.module.css';
 import { ContactCV } from "../ContactCV";
 import { TechnicalSkillsCV } from "../TechnicalSkillsCV";
-import { LanguagesCV } from "../LanguagesCV/LanguagesCV";
-
+import { LanguagesCV } from "../LanguagesCV";
+import { PetProjectsCV } from "../PetProjectsCV";
 
 export const BodyCV = () => {
   return (
@@ -13,7 +13,7 @@ export const BodyCV = () => {
           <LanguagesCV/>
         </div>
         <div className={styles.column}>
-
+          <PetProjectsCV/>
         </div>
       </div>
   );
