@@ -5,3 +5,9 @@
 .wrapper {
     padding: 10px;
 }
+
+.skill {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
