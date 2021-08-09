@@ -5,8 +5,10 @@ import styles from './Preview.module.css';
 export const Preview = ({ setStart }) => {
   return (
       <div className={styles.wrapper}>
-        <h1>Lorem, Lorem,Lorem LoremvLorem Lorem Lorem LoremLorem Lorem</h1>
-        <Button onClick={() => setStart(true)} variant="outlined" color="secondary">Start</Button>
+        <div className={styles.block}>
+          <h1>Щоб побачити source code мого проекту потрібно пройти невелике тестування. <br/> Це займе менше 2-х хвилин</h1>
+          <Button onClick={() => setStart(true)} variant="outlined" color="secondary">Start</Button>
+        </div>
       </div>
   );
 }
