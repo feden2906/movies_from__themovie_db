@@ -11,19 +11,23 @@ export const Questions = ({ setSuccess, success }) => {
     checkbox1: false,
     checkbox2: false,
     checkbox3: false,
+    checkbox4: false,
+    answer2: '',
     input1: '',
     answer6: '',
   });
 
   const exampleAnswers = {
-    answer1: '',
-    checkbox1: false,
+    answer1: 'Максим',
+    checkbox1: true,
     checkbox2: true,
     checkbox3: false,
+    checkbox4: true,
+    answer2: 'Каріна',
     input1: '',
     answer6: '',
   }
-  console.log(formState)
+
 
   const handleChange = ({ target: { value, name } }) => setFormState({ ...formState, [name]: value });
   const handleCheckbox = ({ target: { checked, name } }) => setFormState({ ...formState, [name]: checked });
@@ -43,55 +47,87 @@ export const Questions = ({ setSuccess, success }) => {
         <h1>My test for you</h1>
         <div>
           <FormControl component="fieldset">
-            <FormLabel component="legend">Gender</FormLabel>
-            <RadioGroup aria-label="gender"
+            <FormLabel component="legend">Хто найкращий ментор в OktenWeb?</FormLabel>
+            <RadioGroup aria-label="mentor"
                         name="answer1"
                         value={formState.answer1}
                         onChange={handleChange}>
-              <FormControlLabel value="female"
+              <FormControlLabel value="Віктор"
                                 control={<Radio/>}
-                                label="Female"/>
-              <FormControlLabel value="male"
+                                label="Віктор"/>
+              <FormControlLabel value="Сергій"
                                 control={<Radio/>}
-                                label="Male"/>
-              <FormControlLabel value="other"
+                                label="Сергій"/>
+              <FormControlLabel value="Юрій"
                                 control={<Radio/>}
-                                label="Other"/>
+                                label="Юрій"/>
+              <FormControlLabel value="Максим"
+                                control={<Radio/>}
+                                label="Максим"/>
+              <FormControlLabel value="Інша відповідь"
+                                control={<Radio/>}
+                                label="Інша відповідь"/>
             </RadioGroup>
 
-            <FormLabel component="legend">Assign responsibility</FormLabel>
+            <hr/>
+
+            <FormLabel component="legend">Що робити у випадку коли виникли запитання? (декілька вірних відповітей)</FormLabel>
             <FormGroup>
-              <FormControlLabel control={<Checkbox color={success ? 'primary' : 'secondary'}
+              <FormControlLabel control={<Checkbox color={'secondary'}
                                                    checked={formState.checkbox1}
                                                    onChange={handleCheckbox}
                                                    name="checkbox1"/>}
-                                label="Gilad Gray"/>
-              <FormControlLabel control={<Checkbox color={success ? 'primary' : 'secondary'}
+                                label="Задити питання колезі"/>
+              <FormControlLabel control={<Checkbox color={'secondary'}
                                                    checked={formState.checkbox2}
                                                    onChange={handleCheckbox}
                                                    name="checkbox2"/>}
-                                label="Jason Killian"/>
-              <FormControlLabel control={<Checkbox color={success ? 'primary' : 'secondary'}
+                                label="Запитати в когось біля метро"/>
+              <FormControlLabel control={<Checkbox color={'secondary'}
                                                    checked={formState.checkbox3}
                                                    onChange={handleCheckbox}
                                                    name="checkbox3"/>}
-                                label="Antoine Llorca"/>
+                                label="Задати питання ментору"/>
+              <FormControlLabel control={<Checkbox color={'secondary'}
+                                                   checked={formState.checkbox4}
+                                                   onChange={handleCheckbox}
+                                                   name="checkbox4"/>}
+                                label="читати доку і самостійно розбиратися"/>
             </FormGroup>
 
-            <FormLabel component="legend">Assign </FormLabel>
-            <TextField onChange={handleChange}
-                       value={formState.input1}
-                       name="input1"
-                       label="Outlined"
-                       variant="outlined"/>
+            <hr/>
 
-            {!success && <Button onClick={submit}
-                                 variant="outlined"
-                                 color="primary">Submit</Button>}
+            <FormLabel component="legend">Як звати Віктора дівчину?</FormLabel>
+            <RadioGroup aria-label="gender"
+                        name="answer2"
+                        value={formState.answer2}
+                        onChange={handleChange}>
+              <FormControlLabel value="Тамара"
+                                control={<Radio/>}
+                                label="Тамара"/>
+              <FormControlLabel value="Ольга"
+                                control={<Radio/>}
+                                label="Ольга"/>
+              <FormControlLabel value="Каріна"
+                                control={<Radio/>}
+                                label="Каріна"/>
+              <FormControlLabel value="Надія"
+                                control={<Radio/>}
+                                label="Надія"/>
+              <FormControlLabel value="Інша відповідь"
+                                control={<Radio/>}
+                                label="Інша відповідь"/>
+            </RadioGroup>
+
+
+            {/*<FormLabel component="legend">Що робити у випадку коли виниклизапитання?</FormLabel>*/}
+            {/*<TextField onChange={handleChange} value={formState.input1} name="input1" label="Outlined" variant="outlined"/>*/}
+
+            {!success && <Button onClick={submit} variant="outlined" color="primary">Submit</Button>}
           </FormControl>
         </div>
         <div className={styles.linkToGitHub}>
-          {success && <a href="https://www.google.com/"><i>Show project on GitHub</i></a>}
+          {success && <a href="https://www.google.com/"><i>Show source code my project</i></a>}
         </div>
       </div>
   );
