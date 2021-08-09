@@ -53,18 +53,23 @@ export const Questions = ({ setSuccess, success }) => {
                         value={formState.answer1}
                         onChange={handleChange}>
               <FormControlLabel value="Віктор"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Віктор"/>
               <FormControlLabel value="Сергій"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Сергій"/>
               <FormControlLabel value="Юрій"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Юрій"/>
               <FormControlLabel value="Максим"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Максим"/>
               <FormControlLabel value="Інша відповідь"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Інша відповідь"/>
             </RadioGroup>
@@ -74,21 +79,25 @@ export const Questions = ({ setSuccess, success }) => {
             <FormLabel component="legend">Що робити у випадку коли виникли запитання? (декілька вірних відповітей)</FormLabel>
             <FormGroup>
               <FormControlLabel control={<Checkbox color={'secondary'}
+                                                   disabled={success}
                                                    checked={formState.checkbox1}
                                                    onChange={handleCheckbox}
                                                    name="checkbox1"/>}
                                 label="Задити питання колезі"/>
               <FormControlLabel control={<Checkbox color={'secondary'}
+                                                   disabled={success}
                                                    checked={formState.checkbox2}
                                                    onChange={handleCheckbox}
                                                    name="checkbox2"/>}
                                 label="Запитати в когось біля метро"/>
               <FormControlLabel control={<Checkbox color={'secondary'}
+                                                   disabled={success}
                                                    checked={formState.checkbox3}
                                                    onChange={handleCheckbox}
                                                    name="checkbox3"/>}
                                 label="Задати питання ментору"/>
               <FormControlLabel control={<Checkbox color={'secondary'}
+                                                   disabled={success}
                                                    checked={formState.checkbox4}
                                                    onChange={handleCheckbox}
                                                    name="checkbox4"/>}
@@ -103,18 +112,23 @@ export const Questions = ({ setSuccess, success }) => {
                         value={formState.answer2}
                         onChange={handleChange}>
               <FormControlLabel value="Тамара"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Тамара"/>
               <FormControlLabel value="Ольга"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Ольга"/>
               <FormControlLabel value="Каріна"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Каріна"/>
               <FormControlLabel value="Надія"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Надія"/>
               <FormControlLabel value="Інша відповідь"
+                                disabled={success}
                                 control={<Radio/>}
                                 label="Інша відповідь"/>
             </RadioGroup>

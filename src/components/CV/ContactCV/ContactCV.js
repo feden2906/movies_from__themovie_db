@@ -9,7 +9,7 @@ export const ContactCV = () => {
         <div className={styles.wrapper}>
           <div>
             <b>E-mail : </b>
-            <span>feden2906@gmail.com</span>
+            <a target="_blank" href='mailto:feden2906@gmail.com'>feden2906@gmail.com</a>
           </div>
           <div>
             <b>Phone : </b>
@@ -17,15 +17,15 @@ export const ContactCV = () => {
           </div>
           <div>
             <b>Telegram : </b>
-            <span>@feden2906</span>
+            <a target="_blank" href='https://t.me/feden2906'>@feden2906</a>
           </div>
           <div>
             <b>GitHub : </b>
-            <span>https://github.com/feden2906</span>
+            <a target="_blank" href='https://github.com/feden2906'>https://github.com/feden2906</a>
           </div>
           <div>
             <b>Linkedin : </b>
-            <span>https://www.linkedin.com/in/maksym-fedenko-22a5781b9</span>
+            <a target="_blank" href='https://www.linkedin.com/in/maksym-fedenko-22a5781b9'>https://www.linkedin.com/in/maksym-fedenko-22a5781b9</a>
           </div>
           <div>
             <b>Skype : </b>

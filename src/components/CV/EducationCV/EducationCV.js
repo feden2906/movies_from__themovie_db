@@ -4,8 +4,13 @@ import { BlockTitle } from "../BlockTitle";
 export const EducationCV = () => {
   return (
       <div className={styles.wrapperBlock}>
-        <BlockTitle title={'WORK EXPERIENCE'}/>
+        <BlockTitle title={'EDUCATION'}/>
         <div className={styles.wrapper}>
+          <div>
+            <b>JavaScript Complex Course</b>
+            <p>Sep 2020 - Present</p>
+            <p>OktenWeb University</p>
+          </div>
           <div>
             <b>JavaScript Complex Course</b>
             <p>Sep 2020 - Present</p>

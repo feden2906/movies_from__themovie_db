@@ -72,7 +72,9 @@ export const MovieInfo = () => {
           <b>Опис :</b>
           <p>{filmDetails.overview}</p>
 
-          <iframe title={'video'} src={'https://www.youtube.com/embed/' + filmDetails.videos?.results[0]?.key}/>
+          <iframe title={'video'}
+                  allowFullScreen="allowfullscreen"
+                  src={'https://www.youtube.com/embed/' + filmDetails.videos?.results[0]?.key}/>
         </div>
       </div>
   )
