@@ -3,9 +3,10 @@ import {
   Button,
   Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, TextField
 } from "@material-ui/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Questions = ({ setSuccess, success }) => {
+  const [valid, setValid] = useState(false);
   const [formState, setFormState] = useState({
     answer1: '',
     checkbox1: false,
@@ -28,19 +29,26 @@ export const Questions = ({ setSuccess, success }) => {
     answer6: '',
   }
 
-
-  const handleChange = ({ target: { value, name } }) => setFormState({ ...formState, [name]: value });
-  const handleCheckbox = ({ target: { checked, name } }) => setFormState({ ...formState, [name]: checked });
-
   const submit = () => {
     for (const key in formState) {
       if (formState[key] !== exampleAnswers[key]) {
-        setSuccess(false);
+        setValid(false);
         break;
       }
-      setSuccess(true);
+      setValid(true);
     }
   }
+
+  const handleChange = ({ target: { value, name } }) => {
+    setFormState({ ...formState, [name]: value })
+  }
+  const handleCheckbox = ({ target: { checked, name } }) => {
+    setFormState({ ...formState, [name]: checked })
+  }
+
+  useEffect(() => {
+    submit();
+  }, [formState, submit, valid])
 
   return (
       <div className={`${styles.wrapper} ${success ? styles.green : styles.red}`}>
@@ -106,7 +114,7 @@ export const Questions = ({ setSuccess, success }) => {
 
             <hr/>
 
-            <FormLabel component="legend">Як звати Віктора дівчину?</FormLabel>
+            <FormLabel component="legend">Як звати дівчину Віктора?</FormLabel>
             <RadioGroup aria-label="gender"
                         name="answer2"
                         value={formState.answer2}
@@ -137,11 +145,12 @@ export const Questions = ({ setSuccess, success }) => {
             {/*<FormLabel component="legend">Що робити у випадку коли виниклизапитання?</FormLabel>*/}
             {/*<TextField onChange={handleChange} value={formState.input1} name="input1" label="Outlined" variant="outlined"/>*/}
 
-            {!success && <Button onClick={submit} variant="outlined" color="primary">Submit</Button>}
+            {valid && <Button onClick={() => setSuccess(true)} variant="outlined" color="primary">Submit</Button>}
+            {!valid && <Button target='_blank' href="https://www.google.com/search?q=js+%D0%B4%D0%BB%D1%8F+%D1%87%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&client=ubuntu&hs=2kU&ei=fXMSYbS-EO6M9u8P4_KM6AE&oq=JS+%D0%B4%D0%BB%D1%8F+%D1%87%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQgAQyBQgAEIAEMgYIABAFEB4yBggAEAUQHjIGCAAQBRAeMgYIABAFEB4yBggAEAUQHjIGCAAQBRAeMgYIABAFEB4yBggAEAUQHjoHCAAQRxCwAzoGCAAQBxAeOggIABAHEAUQHjoECAAQDToICAAQDRAFEB5KBAhBGABQnvUOWKCYD2CLoQ9oBXACeACAAXGIAaQHkgEDMi43mAEAoAEByAEIwAEB&sclient=gws-wiz" variant="outlined" color="primary">Submit</Button>}
           </FormControl>
         </div>
         <div className={styles.linkToGitHub}>
-          {success && <a href="https://www.google.com/"><i>Show source code my project</i></a>}
+          {success && <a target='_blank' href="https://www.google.com/"><i>Show source code my project</i></a>}
         </div>
       </div>
   );
