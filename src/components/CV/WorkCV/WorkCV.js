@@ -7,16 +7,12 @@ export const WorkCV = () => {
         <BlockTitle title={'WORK EXPERIENCE'}/>
         <div className={styles.wrapper}>
           <div>
-            <b>Lab Engineer</b>
-            <p>Feb 2019 - Sep 2020</p>
-            <p>PJSC“TRAKTOROSAPCHASTYNA"</p>
+            <b>head of development department</b>
+            <p>May 2018 - September 2021</p>
+            <p>"Alfa Global"</p>
           </div>
 
-          <div>
-            <b>Lab Engineer</b>
-            <p>Feb 2019 - Sep 2020</p>
-            <p>PJSC“TRAKTOROSAPCHASTYNA"</p>
-          </div>
+
         </div>
       </div>
   );

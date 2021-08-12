@@ -6,11 +6,9 @@ export const PetProjectsCV = () => {
       <div className={styles.wrapperBlock}>
         <BlockTitle title={'PET PROJECTS'}/>
         <div className={styles.wrapper}>
-          <a target="_blank" href="https://feden2906.github.io">https://feden2906.github.io</a>
+          <a target="_blank" href="https://alexandrkhom.github.io/">https://alexandrkhom.github.io/</a>
           <br/>
-          <a target="_blank" href="#">Link 2</a>
-          <br/>
-          <a target="_blank" href="#">Link 3</a>
+
         </div>
       </div>
   );

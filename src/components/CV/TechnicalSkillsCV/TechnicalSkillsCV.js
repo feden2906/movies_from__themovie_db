@@ -9,26 +9,26 @@ export const TechnicalSkillsCV = () => {
         <div className={styles.wrapper}>
           <div className={styles.skill}>
             <span>JavaScript</span>
-            <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+            <span>⚫⚫⚫⚫⚪</span>
           </div>
           <div className={styles.skill}>
-            <span>TypeScript</span>
-            <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+            <span>React (Redux, thunk)</span>
+            <span>⚫⚫⚫⚫⚪</span>
           </div>
           <div className={styles.skill}>
-            <span>React</span>
-            <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+            <span>MySQL/MongoDB</span>
+            <span>⚫⚫⚪⚪⚪</span>
           </div>
           <div className={styles.skill}>
-            <span>Angular</span>
-            <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+            <span>Angular/TypeScript</span>
+            <span>⚫⚪⚪⚪⚪</span>
           </div>
           <div className={styles.skill}>
             <span>Node.js</span>
-            <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+            <span>⚫⚪⚪⚪⚪</span>
           </div>
           <div>
-            <span>Git, Redux, MongoDB, MySQL</span>
+            <span>GIT, Webpack, Bootstrap, CSS3, HTML5, Figma</span>
           </div>
         </div>
       </div>
