@@ -1,7 +1,7 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import './App.css';
-import { CV, MoviesPage, TestPage } from "./containers";
+import {Calculator, CV, MoviesPage, TestPage} from "./containers";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route path="/movies" component={MoviesPage}/>
           <Route path="/myCV" component={CV}/>
           <Route path="/test" component={TestPage}/>
+          <Route path="/calculator" component={Calculator}/>
         </Switch>
 
       </div>
