@@ -19,6 +19,11 @@
     padding: 30px 50px;
 }
 
+.second {
+    display: flex;
+    justify-content: center;
+}
+
 .btnWrapper {
     display: flex;
     justify-content: center;
@@ -39,4 +44,8 @@
 .close:active {
     cursor: pointer;
     background-color: #a8a7a7;
+}
+
+.info {
+    font-size: 20px;
 }

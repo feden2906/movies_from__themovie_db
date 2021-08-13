@@ -28,3 +28,22 @@
 .red {
     background-color: #fcd1d1;
 }
+
+.qsize {
+    font-family: Arial;
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.qsize2 {
+    font-family: "Fira Code";
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.notForCopy {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

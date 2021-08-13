@@ -12,14 +12,9 @@ export const EducationCV = () => {
             <p>OktenWeb University</p>
           </div>
           <div>
-            <b>JavaScript Complex Course</b>
-            <p>Sep 2020 - Present</p>
-            <p>OktenWeb University</p>
-          </div>
-          <div>
-            <b>Master of Oil and Gas Engineering</b>
-            <p>Sep 2015 – Feb 2019</p>
-            <p>Ivano-Frankivsk Technical National University of Oil and Gas</p>
+            <b>Medical Psychology</b>
+            <p>Sep 2003 – May 2010</p>
+            <p>BOGOMOLETS NATIONAL MEDICAL UNIVERSITY</p>
           </div>
         </div>
       </div>

@@ -9,8 +9,8 @@
     width: 1000px;
     min-height: 100vh;
     background-color: #fff;
-    border-left: 1px black solid;
-    border-right: 1px black solid;
+    /*border-left: 1px black solid;*/
+    /*border-right: 1px black solid;*/
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 .wrapper > h1 {

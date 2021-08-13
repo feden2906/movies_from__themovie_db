@@ -9,27 +9,27 @@ export const ContactCV = () => {
         <div className={styles.wrapper}>
           <div>
             <b>E-mail : </b>
-            <a target="_blank" href='mailto:feden2906@gmail.com'>feden2906@gmail.com</a>
+            <a target="_blank" href='mailto:alex988andr@gmail.com'>alex988andr@gmail.com</a>
           </div>
           <div>
             <b>Phone : </b>
-            <span>+38 (097) 63 22 866</span>
+            <span>+38 (073) 020 12 85</span>
           </div>
           <div>
             <b>Telegram : </b>
-            <a target="_blank" href='https://t.me/feden2906'>@feden2906</a>
+            <a target="_blank" href='https://t.me/Ander988'>@Ander988</a>
           </div>
           <div>
             <b>GitHub : </b>
-            <a target="_blank" href='https://github.com/feden2906'>https://github.com/feden2906</a>
+            <a target="_blank" href='https://github.com/AlexandrKhom'>https://github.com/AlexandrKhom</a>
           </div>
-          <div>
-            <b>Linkedin : </b>
-            <a target="_blank" href='https://www.linkedin.com/in/maksym-fedenko-22a5781b9'>https://www.linkedin.com/in/maksym-fedenko-22a5781b9</a>
-          </div>
+          {/*<div>*/}
+          {/*  <b>Linkedin : </b>*/}
+          {/*  <a target="_blank" href='https://www.linkedin.com/in/maksym-fedenko-22a5781b9'>https://www.linkedin.com/in/maksym-fedenko-22a5781b9</a>*/}
+          {/*</div>*/}
           <div>
             <b>Skype : </b>
-            <span>feden2906</span>
+            <span>alex7work</span>
           </div>
         </div>
       </div>
